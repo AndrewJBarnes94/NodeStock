@@ -32,16 +32,7 @@ app.get('/', function (req, res) {
         res.render('home', {
             stock: doneAPI
         });    
-    });
-});
-
-// Set Handlebars index GET Route
-app.get('/', function (req, res) {
-    call_api(function(doneAPI) {
-        res.render('home', {
-            stock: doneAPI,
-        });    
-    });
+    }, "fb");
 });
 
 // Set Handlebars Index POST Route
@@ -55,10 +46,12 @@ app.post('/', function (req, res) {
     }, req.body.tickerSymbol);
 });
 
+/*
 // Set Handlebars About Route
 app.get('/about', function (req, res) {
     res.render('about');
 });
+*/
 
 // Set Static Folder
 app.unsubscribe(express.static(path.join(__dirname, 'public')));
